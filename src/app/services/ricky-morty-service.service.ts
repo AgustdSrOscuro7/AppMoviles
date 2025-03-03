@@ -45,5 +45,17 @@ export class RickyMortyServiceService {
   getEpisodesImages(): Observable<any> {
     return this.http.get(this.episodesImagesUrl);
  
-}
+  }
+
+  getMasPersonajes(url:string):any{
+    //let url = `${URL_RM}/character`
+    return this.http.get(url, {}).pipe(
+      map((res: any) => {
+        console.log('PERSONAJES_RK',res);
+        return res;
+      })
+    );
+ 
+  }
+
 }
