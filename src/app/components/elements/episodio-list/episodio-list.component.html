@@ -1,3 +1,11 @@
-<p>
-  episodio-list works!
-</p>
+<ion-list>
+  <ion-item *ngFor="let episode of episodes" (click)="selectEpisode(episode)">
+    <ion-thumbnail slot="start">
+      <img [src]="episode.image_url" alt="{{ episode.name }}" />
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{ episode.name }}</h2>
+      <p>Fecha de emisión: {{ episode.air_date }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

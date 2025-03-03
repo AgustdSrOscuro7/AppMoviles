@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-episodio-card',
@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class EpisodioCardComponent  implements OnInit {
+
+  @Input() episode: any;
+  @Input() characters: any[] = [];
+  @Output() close = new EventEmitter<void>();
 
   constructor() { }
 
