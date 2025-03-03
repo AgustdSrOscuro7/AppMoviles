@@ -5,6 +5,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <app-episodio-list
+  [episodes]="episodes"
+  (episodeSelected)="showDetails($event)">
+  </app-episodio-list>
+  <ion-modal [isOpen]="selectedEpisode !== null">
+    <ng-template>
+      <app-episodio-card
+      [episode]="selectedEpisode"
+        [characters]="characters"
+        (close)="closeDetails()">
+      </app-episodio-card>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+
+<!--
+<ion-content>
   <ion-list>
     <ion-item *ngFor="let episode of episodes" (click)="showDetails(episode)">
       <ion-thumbnail slot="start">
@@ -17,7 +34,6 @@
     </ion-item>
   </ion-list>
 
-  <!-- Modal para mostrar los detalles del episodio -->
   <ion-modal [isOpen]="selectedEpisode !== null">
     <ng-template>
       <ion-header>
@@ -44,4 +60,4 @@
       </ion-content>
     </ng-template>
   </ion-modal>
-</ion-content>
+</ion-content>-->

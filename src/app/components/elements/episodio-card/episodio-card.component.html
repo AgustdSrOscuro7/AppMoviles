@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ episode?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close.emit()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img [src]="episode?.image_url" alt="{{ episode?.name }}" />
+  <p><strong>Fecha de emisión:</strong> {{ episode?.air_date }}</p>
+  <p><strong>Episodio:</strong> {{ episode?.episode }}</p>
+
+  <h3>Personajes</h3>
+  <ion-list>
+    <app-personaje-card *ngFor="let character of characters" [character]="character"></app-personaje-card>
+  </ion-list>
+</ion-content>

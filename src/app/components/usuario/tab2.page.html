@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Usuarios
-    </ion-title>
+    <ion-title>Usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,23 +11,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Detalle Usuarios</ion-label>
-    </ion-list-header>
+  <app-personaje-list
+    [personajes]="personajes"
+    [titulo]="'Detalle Usuarios'"
+    [subtitulo]="'Lista de Usuarios'">
+  </app-personaje-list>
 
-    <ion-item *ngFor="let personaje of personajes">
-      <ion-avatar slot="start">
-        <img alt="Silhouette of a person's head"
-        src="{{personaje.image}}" />
-      </ion-avatar>
-      <ion-label>{{personaje.name}} - {{personaje.species}} - {{personaje.status}}</ion-label>
-    </ion-item>
-
-  </ion-list>
-
-  <!--
-  <app-explore-container name="Usuarios page"></app-explore-container>
-  -->
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>
