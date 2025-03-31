@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { RickyMortyServiceService } from 'src/app/services/ricky-morty-service.service';
+import { IonicModule } from '@ionic/angular';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss'],
-  standalone: false,
+    selector: 'app-tab3',
+    templateUrl: 'tab3.page.html',
+    styleUrls: ['tab3.page.scss'],
+    imports: [IonicModule, NgFor],
 })
 export class Tab3Page implements OnInit {
   episodes: any[] = []; // Lista de episodios

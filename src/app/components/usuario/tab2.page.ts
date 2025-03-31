@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { RickyMortyServiceService } from 'src/app/services/ricky-morty-service.service';
+import { IonicModule } from '@ionic/angular';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
-  standalone: false,
+    selector: 'app-tab2',
+    templateUrl: 'tab2.page.html',
+    styleUrls: ['tab2.page.scss'],
+    imports: [IonicModule, NgFor],
 })
 export class Tab2Page {
 
