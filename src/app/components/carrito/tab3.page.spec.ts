@@ -1,8 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
+import { ExploreContainerComponent } from '../explore-container/explore-container.component'; // Importa el componente directamente
 import { Tab3Page } from './tab3.page';
 
 describe('Tab3Page', () => {
@@ -11,8 +9,12 @@ describe('Tab3Page', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [IonicModule.forRoot(), ExploreContainerComponentModule, Tab3Page]
-}).compileComponents();
+      imports: [
+        IonicModule.forRoot(), // Ionic sigue necesitando módulo global
+        Tab3Page, // El componente standalone se importa directamente
+        ExploreContainerComponent, // Importa el componente standalone (no el módulo)
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Tab3Page);
     component = fixture.componentInstance;
